@@ -1,0 +1,79 @@
+(1) CREATE - Add new billing
+POST/URL: localhost:8080/billing/
+Input (BODY/RAW/JSON):
+    {
+        "price_ini": 20.0,
+        "promo": 0,
+        "promo_amount": 1,
+        "price_final": 20.0,
+        "article_id": 3
+    }
+Nota: El ID no se incluye en el BODY de la REQUEST porque lo registra el programa. Es un AUTO_INCREMENT.
+Output:
+{
+    "id": 2,
+    "price_ini": 20.0,
+    "promo": false,
+    "promo_amount": 1.0,
+    "price_final": 20.0,
+    "article_id": 3
+}
+
+(2) READ - Find all billings
+GET/URL: http://localhost:8080/billing/
+Output: 
+[
+    {
+        "id": 1,
+        "price_ini": 10.0,
+        "promo": true,
+        "promo_amount": 0.5,
+        "price_final": 15.0,
+        "article_id": 1
+    },
+    {
+        "id": 2,
+        "price_ini": 20.0,
+        "promo": false,
+        "promo_amount": 1.0,
+        "price_final": 20.0,
+        "article_id": 3
+    }
+]
+Nota: aparecen los registros de pruebas.
+
+(3) READ - Find billing by ID
+GET/URL: localhost:8080/billing/1
+Output: 
+{
+    "id": 1,
+    "price_ini": 10.0,
+    "promo": true,
+    "promo_amount": 0.5,
+    "price_final": 15.0,
+    "article_id": 1
+}
+
+(4) UPDATE - Modify article
+PUT/URL: localhost:8080/billing/
+Input (BODY/RAW/JSON):
+{
+    "id": 2,
+    "price_ini": 10,
+    "promo": 1,
+    "promo_amount": 0.3,
+    "price_final": 13,
+    "article_id": 3
+}
+Output: 
+{
+    "id": 2,
+    "price_ini": 10.0,
+    "promo": true,
+    "promo_amount": 0.3,
+    "price_final": 13.0,
+    "article_id": 3
+}
+
+(5) DELETE - Remove article
+DELETE/URL: localhost:8080/billing/2
