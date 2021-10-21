@@ -27,7 +27,8 @@ CREATE TABLE articles (
 	date_ini DATETIME NOT NULL,
 	delay_days VARCHAR(25) NOT NULL,
 	price NUMERIC(65,2) NOT NULL,
-	qty NUMERIC(65,2) NOT NULL
+	qty NUMERIC(65,2) NOT NULL,
+	promos ENUM('SINPROMO','NAVIDAD')
 
 );
 

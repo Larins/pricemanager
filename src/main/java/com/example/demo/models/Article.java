@@ -7,6 +7,8 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -45,68 +47,116 @@ public class Article {
 	private LocalDateTime date_fin;
 	private int delay_days;
 	private float amount;
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
+	
+	@Column(name="PROMO")
+	@Enumerated(EnumType.STRING)
+	private Promos promo;
+	
+	public Article(long id, String name, String postalcode_ini, String postalcode_fin, float price, float qty, LocalDateTime date_ini, LocalDateTime date_fin, int delay_days, float amount) {
 		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
 		this.name = name;
-	}
-	public String getPostalcode_ini() {
-		return postalcode_ini;
-	}
-	public void setPostalcode_ini(String postalcode_ini) {
 		this.postalcode_ini = postalcode_ini;
-	}
-	public String getPostalcode_fin() {
-		return postalcode_fin;
-	}
-	public void setPostalcode_fin(String postalcode_fin) {
 		this.postalcode_fin = postalcode_fin;
-	}
-	public float getPrice() {
-		return price;
-	}
-	public void setPrice(float price) {
 		this.price = price;
-	}
-	public float getQty() {
-		return qty;
-	}
-	public void setQty(float qty) {
 		this.qty = qty;
-	}
-	public LocalDateTime getDate_ini() {
-		return date_ini;
-	}
-	public void setDate_ini(LocalDateTime date_ini) {
 		this.date_ini = date_ini;
-	}
-	public LocalDateTime getDate_fin() {
-		return date_fin;
-	}
-	public void setDate_fin(LocalDateTime date_fin) {
 		this.date_fin = date_fin;
-	}
-	public int getDelay_days() {
-		return delay_days;
-	}
-	public void setDelay_days(int delay_days) {
 		this.delay_days = delay_days;
-	}
-	public float getAmount() {
-		return amount;
-	}
-	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	
-	
+	public Article() {
+			
+		}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPostalcode_ini() {
+		return postalcode_ini;
+	}
+
+	public void setPostalcode_ini(String postalcode_ini) {
+		this.postalcode_ini = postalcode_ini;
+	}
+
+	public String getPostalcode_fin() {
+		return postalcode_fin;
+	}
+
+	public void setPostalcode_fin(String postalcode_fin) {
+		this.postalcode_fin = postalcode_fin;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public float getQty() {
+		return qty;
+	}
+
+	public void setQty(float qty) {
+		this.qty = qty;
+	}
+
+	public LocalDateTime getDate_ini() {
+		return date_ini;
+	}
+
+	public void setDate_ini(LocalDateTime date_ini) {
+		this.date_ini = date_ini;
+	}
+
+	public LocalDateTime getDate_fin() {
+		return date_fin;
+	}
+
+	public void setDate_fin(LocalDateTime date_fin) {
+		this.date_fin = date_fin;
+	}
+
+	public int getDelay_days() {
+		return delay_days;
+	}
+
+	public void setDelay_days(int delay_days) {
+		this.delay_days = delay_days;
+	}
+
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+
+	public Promos getPromo() {
+		return promo;
+	}
+
+	public void setPromo(Promos promo) {
+		this.promo = promo;
+	}
+
 	
 
 	
