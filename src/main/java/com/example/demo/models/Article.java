@@ -105,6 +105,11 @@ public class Article {
 	public void setAmount(float amount) {
 		this.amount = amount;
 	}
+
+	
+	
+	
+	
 	
 	
 	
