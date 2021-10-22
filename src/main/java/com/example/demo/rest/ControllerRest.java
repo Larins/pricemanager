@@ -58,6 +58,7 @@ public class ControllerRest {
 		newArticle.setPrice(article.getPrice());
 		newArticle.setAmount(article.getPrice()*article.getQty());
 		newArticle.setDate_fin(article.getDate_ini().plusDays(article.getDelay_days()));
+		articlesDAO.save(newArticle);
 		return ResponseEntity.ok(newArticle);
 	}
 	
