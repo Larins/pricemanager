@@ -25,14 +25,6 @@ public class Article {
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	
-	/*@Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator( name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "order_id")
-	@Type(type="uuid-char")
-	@JsonProperty("id")
-	private UUID id;*/
 
 	@Column(name="name", nullable=false, length=30)
 	private String name;
@@ -44,7 +36,11 @@ public class Article {
 	private LocalDateTime date_ini;
 	private LocalDateTime date_fin;
 	private int delay_days;
-	private float amount;
+	private float import_bef_promo;
+	private long promo_id;
+	private String promo_name;
+	private float promo_mod;
+	private float import_aft_promo;
 	public long getId() {
 		return id;
 	}
@@ -99,15 +95,37 @@ public class Article {
 	public void setDelay_days(int delay_days) {
 		this.delay_days = delay_days;
 	}
-	public float getAmount() {
-		return amount;
+	public float getImport_bef_promo() {
+		return import_bef_promo;
 	}
-	public void setAmount(float amount) {
-		this.amount = amount;
+	public void setImport_bef_promo(float import_bef_promo) {
+		this.import_bef_promo = import_bef_promo;
 	}
-	
-	
-	
+	public long getPromo_id() {
+		return promo_id;
+	}
+	public void setPromo_id(long promo_id) {
+		this.promo_id = promo_id;
+	}
+	public String getPromo_name() {
+		return promo_name;
+	}
+	public void setPromo_name(String promo_name) {
+		this.promo_name = promo_name;
+	}
+	public float getPromo_mod() {
+		return promo_mod;
+	}
+	public void setPromo_mod(float promo_mod) {
+		this.promo_mod = promo_mod;
+	}
+	public float getImport_aft_promo() {
+		return import_aft_promo;
+	}
+	public void setImport_aft_promo(float import_aft_promo) {
+		this.import_aft_promo = import_aft_promo;
+	}
+
 
 	
 }
